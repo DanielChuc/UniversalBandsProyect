@@ -1,0 +1,101 @@
+{"model_name":"Cliente",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"clientes",
+    "fields":[
+        {
+
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "apellido",
+            "type": "string"
+
+        },
+        {
+            "name": "email",
+            "type": "email"
+
+        },
+        {
+            "name": "direccion",
+            "type": "string"
+
+        },
+        {
+            "name": "pais",
+            "type": "string"
+
+        },
+        {
+            "name": "ciudad",
+            "type": "string"
+
+        },
+        {
+            "name": "codigoPostal",
+            "type": "string"
+
+        },
+        {
+            "name": "telefono",
+            "type": "string"
+
+        }
+    ],
+    
+   
+    "foreign_keys": [
+        
+       
+      
+
+    ],
+    "relationships": [
+       
+        {
+           "type": "belongsTo",
+           "name": "logentrada",
+           "class": "App\\Models\\LogEntrada"
+       },
+       {
+        "type": "hasMany",
+        "name": "banda",
+        "class": "App\\Models\\Banda"
+    }
+       
+   ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:2"
+        },
+        {
+            "field": "apellido",
+            "rules": "required|min:2"
+        },
+        {
+            "field": "email",
+            "rules": "required|min:9"
+        },
+        {
+            "field": "telefono",
+            "rules": "required|min:10"
+        },
+         {
+            "field": "pais",
+            "rules": "required|min:2"
+        },
+        {
+            "field": "ciudad",
+            "rules": "required|min:2"
+        },
+        {
+            "field": "codigoPostal",
+            "rules": "required|min:5"
+        }
+    ]
+
+}

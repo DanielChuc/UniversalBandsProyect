@@ -1,0 +1,36 @@
+{"model_name":"Categoria",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"categorias",
+    "fields":[
+        {
+
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "descripcion",
+            "type": "text"
+
+        }
+    ],
+    
+   
+    "foreign_keys": [],
+    "relationships": [
+        {
+            "type": "hasMany",
+            "name": "evento",
+            "class": "App\\Models\\Evento"
+        }
+   ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:2"
+        }
+      
+    ]
+
+}

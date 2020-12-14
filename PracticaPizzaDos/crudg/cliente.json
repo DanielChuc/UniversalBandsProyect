@@ -1,0 +1,71 @@
+{"model_name":"Cliente",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"clientes",
+    "fields":[
+        {
+
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "email"
+
+        },
+        {
+            "name": "direccion",
+            "type": "string"
+
+        },
+        {
+            "name": "pais",
+            "type": "string"
+
+        },
+        {
+            "name": "ciudad",
+            "type": "string"
+
+        },
+        {
+            "name": "codigoPostal",
+            "type": "string"
+
+        },
+        {
+            "name": "telefono",
+            "type": "string"
+
+        }
+    ],
+    
+   
+    "foreign_keys": [
+        
+       
+      
+
+    ],
+    "relationships": [
+       
+        {
+           "type": "hasMany",
+           "name": "pedido",
+           "class": "App\\Models\\Pedido"
+       }
+       
+   ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:2"
+        },
+        {
+            "field": "telefono",
+            "rules": "required|min:10"
+        }
+    ]
+
+}

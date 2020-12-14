@@ -1,0 +1,42 @@
+{"model_name":"Evento",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"eventos",
+    "fields":[
+        {
+
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "precio",
+            "type": "decimal"
+
+        },
+        {
+            "name": "descripcion",
+            "type": "string"
+
+        },
+        {
+            "name": "ingredientes",
+            "type": "string"
+
+        }
+       
+    ],
+    "foreign_keys": [],
+    "relationships": [],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "direccion",
+            "rules": "required|min:5"
+        }
+    ]
+
+}

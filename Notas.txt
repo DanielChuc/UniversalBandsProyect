@@ -1,0 +1,42 @@
+Instalar adminlte
+composer require jeroennoten/laravel-adminlte
+
+php artisan adminlte:install
+
+Crud generator
+
+composer require appzcoder/crud-generator --dev
+
+php artisan vendor:publish
+1
+
+Correr crudGenerator
+entrada.json
+php artisan crud:generate Pizza --fields_from_file="crudg/pizza.json" --form-helper=html
+
+php artisan crud:generate Categoria --fields_from_file="crudg/categoria.json" --form-helper=html
+
+php artisan migrate
+
+instalar tinker
+composer require laravel/tinker
+
+correr tinker
+php artisan tinker
+
+
+Passport
+
+composer require laravel/passport "~9.0"
+
+php artisan migrate
+
+php artisan passport:install
+
+
+Practica Pizza 
+Client ID: 1
+Client secret: Rjb99ywYzafyUYPkmEN3qGcswJMrmd8rR17Cb61F
+Password grant client created successfully.
+Client ID: 2
+Client secret: i9BL1W5utmq2fxZu9Jy9wdMQqejQLWEXhsVbvozT

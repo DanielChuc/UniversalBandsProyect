@@ -1,0 +1,97 @@
+{"model_name":"Evento",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"eventos",
+    "fields":[
+        {
+
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "direccion",
+            "type": "string"
+
+        },
+        {
+            "name": "descripcion",
+            "type": "text"
+
+        },
+        {
+            "name": "pais",
+            "type": "string"
+
+        },
+        {
+            "name": "ciudad",
+            "type": "string"
+
+        },
+        {
+            "name": "fechas",
+            "type": "datetime"
+
+        },
+        {
+            "name": "capacidad_Lugares",
+            "type": "integer"
+
+        },
+        {
+            "name": "lugares_Disponibles",
+            "type": "integer"
+
+        },
+        {
+            "name":"categoria_id",
+            "type":"integer#unsigned"            
+
+        }
+       
+    ],
+    "foreign_keys": [
+        {
+            "column": "categoria_id",
+            "references": "id",
+            "on": "categorias",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "type": "belongsTo",
+            "name": "categoria",
+            "class": "App\\Models\\Categoria"
+        },
+        {
+            "type": "belongsTo",
+            "name": "logentrada",
+            "class": "App\\Models\\LogEntrada"
+        }
+    ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "direccion",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "pais",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "ciudad",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "direccion",
+            "rules": "required|min:5"
+        }
+    ]
+
+}

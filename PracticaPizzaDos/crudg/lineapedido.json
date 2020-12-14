@@ -1,0 +1,61 @@
+{"model_name":"LineaPedido",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"lineasPedidos",
+    "fields":[
+      
+        {
+            "name":"pizza_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"pedido_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"cantidad",
+            "type":"integer"            
+
+        }
+        
+    ],
+
+    "foreign_keys": [
+        
+        {
+            "column": "pizza_id",
+            "references": "id",
+            "on": "pizzas",
+            "onDelete": "cascade"
+        },
+       
+        {
+            "column": "pedido_id",
+            "references": "id",
+            "on": "pedidos",
+            "onDelete": "cascade"
+        }
+      
+    ],
+    "relationships": [
+       
+        {
+           "type": "hasOne",
+           "name": "pizza",
+           "class": "App\\Models\\Pizza"
+       },
+       {
+           "type": "belongsTo",
+           "name": "pedido",
+           "class": "App\\Models\\Pedido"
+       }
+       
+   ],
+    "validations": [
+       
+    ]
+
+}

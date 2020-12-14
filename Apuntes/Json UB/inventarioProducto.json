@@ -1,0 +1,51 @@
+{"model_name":"InventarioPorducto",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"inventarioPorductos",
+    "fields":[
+        {
+            "name": "stock",
+            "type": "integer"
+
+        },
+        {
+            "name":"inventario_id",
+            "type":"integer#unsigned"            
+        },
+        {
+            "name":"producto_id",
+            "type":"integer#unsigned"            
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "inventario_id",
+            "references": "id",
+            "on": "intentarios",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "producto_id",
+            "references": "id",
+            "on": "productos",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "type": "belongsTo",
+            "name": "Inventario",
+            "class": "App\\Inventario"
+        },
+        {
+            "type": "belongsTo",
+            "name": "Producto",
+            "class": "App\\Producto"
+        }
+    ],
+    "validations": [
+        
+    ]
+
+}

@@ -1,0 +1,66 @@
+{"model_name":"LogEntrada",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"logentradas",
+    "fields":[
+      
+        {
+            "name":"cliente_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"evento_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"horaEntrada",
+            "type":"time"            
+        },
+        {
+            "name":"fechaEntrada",
+            "type":"date"            
+        },
+        {
+            "name":"codigoDeEntrada",
+            "type":"string"            
+
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "cliente_id",
+            "references": "id",
+            "on": "clientes",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "evento_id",
+            "references": "id",
+            "on": "eventos",
+            "onDelete": "cascade"
+        }
+      
+       
+    ],
+    "relationships": [
+       
+        {
+           "type": "hasOne",
+           "name": "evento",
+           "class": "App\\Models\\Evento"
+       },
+       {
+           "type": "hasOne",
+           "name": "cliente",
+           "class": "App\\Models\\Cliente"
+       }
+       
+   ],
+    "validations": [
+  
+    ]
+
+}

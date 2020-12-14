@@ -1,0 +1,47 @@
+{"model_name":"Pedido",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"pedidos",
+    "fields":[
+      
+        {
+            "name":"cliente_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"direccion_Envio",
+            "type":"string"            
+
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "cliente_id",
+            "references": "id",
+            "on": "clientes",
+            "onDelete": "cascade"
+        }
+      
+       
+    ],
+    "relationships": [
+       
+        {
+           "type": "hasMany",
+           "name": "lineas_Pedidos",
+           "class": "App\\Models\\LineaPedido"
+       },
+       {
+           "type": "belongsTo",
+           "name": "cliente",
+           "class": "App\\Models\\Cliente"
+       }
+       
+   ],
+    "validations": [
+  
+    ]
+
+}

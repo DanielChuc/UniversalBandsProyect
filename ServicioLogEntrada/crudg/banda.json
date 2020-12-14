@@ -1,0 +1,51 @@
+{"model_name":"Banda",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"bandas",
+    "fields":[
+      
+        {
+            "name":"cliente_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"codigo",
+            "type":"string"            
+
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "cliente_id",
+            "references": "id",
+            "on": "clientes",
+            "onDelete": "cascade"
+        }
+      
+       
+    ],
+    "relationships": [
+       
+        {
+            "name": "eventoPermitido",
+           "type": "belongsTo",
+           "class": "App\\Models\\EventoPermitido"
+       },
+       {
+           "name": "cliente",
+           "type": "belongsTo",
+           "class": "App\\Models\\Cliente"
+       }
+       
+   ],
+    "validations": [
+        {
+            "field": "codigo",
+            "rules": "required|min:10"
+        }
+  
+    ]
+
+}

@@ -1,0 +1,46 @@
+{"model_name":"TerritorioCliente",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"territorioClientes",
+    "fields":[
+        {
+            "name":"cliente_id",
+            "type":"integer#unsigned"            
+        },
+        {
+            "name":"territorio_id",
+            "type":"integer#unsigned"            
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "cliente_id",
+            "references": "id",
+            "on": "clientes",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "territorio_id",
+            "references": "id",
+            "on": "territorios",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "type": "belongsTo",
+            "name": "Cliente",
+            "class": "App\\Cliente"
+        },
+        {
+            "type": "belongsTo",
+            "name": "Territorio",
+            "class": "App\\Territorio"
+        }
+    ],
+    "validations": [
+        
+    ]
+
+}

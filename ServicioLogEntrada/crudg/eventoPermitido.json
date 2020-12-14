@@ -1,0 +1,56 @@
+{"model_name":"EventoPermitido",
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"enventospermitidos",
+    "fields":[
+      
+        {
+            "name":"evento_id",
+            "type":"integer#unsigned"            
+
+        },
+        {
+            "name":"banda_id",
+            "type":"integer#unsigned"            
+
+        }
+        
+    ],
+
+    "foreign_keys": [
+        
+        {
+            "column": "evento_id",
+            "references": "id",
+            "on": "eventos",
+            "onDelete": "cascade"
+        },
+       
+        {
+            "column": "banda_id",
+            "references": "id",
+            "on": "bandas",
+            "onDelete": "cascade"
+        }
+      
+    ],
+    "relationships": [
+       
+        {
+           "type": "hasOne",
+           "name": "evento",
+           "class": "App\\Models\\Evento"
+       },
+       {
+           "type": "hasOne",
+           "name": "banda",
+           "class": "App\\Models\\Banda"
+       }
+       
+   ],
+    "validations": [
+       
+    ]
+
+}

@@ -1,0 +1,42 @@
+SE REALIZA EN LA CONSOLA 
+
+1. Agregar nombre de usuario en git
+	git config --global user.name "tu nombre que quieras"
+
+2. Agregar correo 
+	git config --global user.email "tu correo"
+
+
+3. para verificar tu nombre y contraseña usas 
+	git config --list
+
+4. Crear una carpeta para tu repositorio
+	ingresas a la ruta de la carpeta
+
+5. inicializar git init para crear un repositori vacio
+	git init
+
+6. añadirla todo lo que tienes en la carpeta, 
+	git add -A  
+Si quieres agregar solo un archivo es 
+	git add nombreDelArchivo.Extension
+
+7. Verificar el estado del proyecto
+	git status
+
+8. Hacer commit
+	git commit -m "Nombre del commit"
+
+9. Añadir lo que tienes en la carpeta a tu repositorio en GitHub
+	git remote add origin  (link_de_tu_repositorio)
+
+10. Subir lo que ya añadiste a tu repositorio en GitHub
+	git push origin master
+
+
+Para agregar otros archivos simplemente regresa desde el paso 6, menos el paso 9 y si estas entrando de nuevo a la consola desde el 5 menos el 9
+
+
+
+
+
