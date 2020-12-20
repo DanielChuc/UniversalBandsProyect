@@ -1,0 +1,32 @@
+para agreagar verificacion de usuarios en el proyecto de laravel ejecutas:
+
+
+composer require laravel/ui:^2.4
+
+php artisan ui vue --auth
+
+nmp install
+
+npm run dev
+
+php artisan migrate
+
+
+extender todos los archivos de la carpeta auth con:
+
+resources/views/auth/login.blade.php:
+@extends('adminlte::auth.login')
+resources/views/auth/register.blade.php
+@extends('adminlte::auth.register')
+resources/views/auth/verify.blade.php
+@extends('adminlte::auth.verify')
+resources/views/auth/passwords/confirm.blade.php
+@extends('adminlte::auth.passwords.confirm')
+resources/views/auth/passwords/email.blade.php
+@extends('adminlte::auth.passwords.email')
+resources/views/auth/passwords/reset.blade.php
+@extends('adminlte::auth.passwords.reset')
+
+
+todo lo demas lo puedes ver en:
+https://github.com/jeroennoten/Laravel-AdminLTE/wiki
